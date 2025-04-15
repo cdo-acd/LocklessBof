@@ -29,7 +29,6 @@ lockless-download Options:
                             If 'handle_id' is chosen, provide the handle ID to the locked file to be downloaded
     /copy -      	(optional): If the /copy switch is included, the file will be copied to disk. If not included, the file will filelessly be download to the cobalt strike teamserver. 
     <outputFile> - 	(optional): Full output path of file (ex: C:\Users\<user>\AppData\Local\cookies123.tmp)
-    ");
 
 ```
 ## Example
